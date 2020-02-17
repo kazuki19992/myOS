@@ -78,7 +78,8 @@ void HariMain(void) {
     init_mouse_cursor8(mcursor, COL8_008484);
     putblock8_8(binfo -> vram, binfo -> scrnx, 16, 16, mx, my, mcursor, 16);
 
-    sprintf(s, "(%d, %d)", mx, my);
+    // sprintf(s, "(%d, %d)", mx, my);
+    sprintf(s, "Unch");
     putfont8_asc(binfo -> vram, binfo -> scrnx, 30, 30, COL8_FFFFFF, s);
     
     // for(;;)ってwhile(1)でよくね？？
