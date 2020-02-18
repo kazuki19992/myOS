@@ -22,7 +22,7 @@ nasmfunc.o : nasmfunc.asm Makefile          # nasmfunc.asmのバイナリファ�
 	nasm -g -f elf nasmfunc.asm -o nasmfunc.o
 
 bootpack.hrb : bootpack.c har.ld nasmfunc.o graphic.c dsctbl.c int.c hankaku.c mySprintf.c Makefile       # コンパイル/リンク
-	gcc -march=i486 -m32 -fno-pic -nostdlib -T har.ld -g graphic.c dsctbl.c int.c mySprintf.c hankaku.c nasmfunc.o -o bootpack.hrb
+	gcc -march=i486 -m32 -fno-pic -nostdlib -T har.ld -g bootpack.c graphic.c dsctbl.c int.c mySprintf.c hankaku.c nasmfunc.o -o bootpack.hrb
 
 haribote.sys : asmhead.bin bootpack.hrb Makefile
 	cat asmhead.bin bootpack.hrb > haribote.sys
